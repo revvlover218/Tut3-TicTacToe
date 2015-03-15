@@ -7,16 +7,14 @@ using namespace std;
 
 NaughtsandCrosses::NaughtsandCrosses()		//Default Constructor
 {
-
 }
 
 NaughtsandCrosses::NaughtsandCrosses(char p1, char p2, char c, int len)		//Overloaded Constructor
 {
+
 	player1 = p1;
 	player2 = p2;
 	board[c];
-
-
 }
 
 NaughtsandCrosses::~NaughtsandCrosses()		//Destructor
@@ -69,7 +67,7 @@ void NaughtsandCrosses::setMark(int m)
 
 void NaughtsandCrosses::print()		//Display
 {
-	//char board[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+	char board[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
 	system("cls");
 	cout << "\n\n\t\tWelcome to TicTacToe, the C++ Game\t\t\n\n" << endl;
@@ -92,6 +90,11 @@ void NaughtsandCrosses::print()		//Display
 
 int NaughtsandCrosses::isWon()		//Check if there is 3 in a row
 {
+
+	//Return 1 if there is a Winner
+	//Return 0 if it is a draw
+	//Return -1 if the game is still in progress
+
 	if (board[1] == board[2] && board[2] == board[3])
 		return 1;
 

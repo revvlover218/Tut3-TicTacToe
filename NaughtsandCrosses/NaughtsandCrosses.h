@@ -11,7 +11,8 @@ private:
 
 	char player1 = 'X';
 	char player2 = 'O';
-	char board[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+	char board[10];
+	//char board[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 	int mark;
 
 public:
