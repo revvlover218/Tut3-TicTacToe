@@ -5,24 +5,32 @@ class NaughtsandCrosses
 {
 private:
 
+	/*string player1 = "Player1";		// For when using the player name instead
+	string player2 = "Player2";*/
+
 	char player1 = 'X';
 	char player2 = 'O';
+	char board[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+	int mark;
 
 public:
-
+	
 	NaughtsandCrosses();		//Default Constructor
-	NaughtsandCrosses(char);		//Overloaded constructor
+	NaughtsandCrosses(char, char, char);		//Overloaded constructor
 	~NaughtsandCrosses();		//Destructor
 
 	char getP1();		//Accessors and Mutators
 	char getP2();
+	//char getBoard();
+	int getmark();
 
-	void setP1();
-	void setP2();
+	void setP1(char p1);
+	void setP2(char p2);
+	void setBoard(char b[], int l);
+	void setMark(const int m);
 
-	char board[10] = { 'o', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-	void restart();
+	void restart();		//Required Methods
 	void move();
 	void print();
 	void isWon();
