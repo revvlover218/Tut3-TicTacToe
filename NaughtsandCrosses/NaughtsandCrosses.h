@@ -1,6 +1,7 @@
 #ifndef NAUGHTSANDCROSSES_H
 #define NAUGHTSANDCROSSES_H
 
+
 class NaughtsandCrosses
 {
 private:
@@ -16,7 +17,7 @@ private:
 public:
 	
 	NaughtsandCrosses();		//Default Constructor
-	NaughtsandCrosses(char, char, char);		//Overloaded constructor
+	NaughtsandCrosses(char, char, char, int);		//Overloaded constructor
 	~NaughtsandCrosses();		//Destructor
 
 	char getP1();		//Accessors and Mutators
@@ -31,9 +32,9 @@ public:
 
 
 	void restart();		//Required Methods
-	void move();
+	bool move();
 	void print();
-	void isWon();
+	int isWon();
 
 
 
