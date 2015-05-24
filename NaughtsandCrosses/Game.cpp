@@ -5,12 +5,17 @@ using namespace std;
 
 int main()
 {
-
+	char alias;
 	bool done = false;
 	NaughtsandCrosses nc;
 
-	if (!done)
+	
+
+	while (!done)
 	{
+		
+		cout << "Player: ";
+
 
 
 
