@@ -7,19 +7,24 @@ class NaughtsandCrosses
 {
 private:
 
-	char player1;
-	char player2;
+	int player1;
+	int player2;
 	char board[10];
+	int input;
+	char again;
 
 public:
 
 	NaughtsandCrosses();		//Default Constructor
 	~NaughtsandCrosses();		//Destructor
 
-	bool restart(bool &, char board[]);
-	bool move(int, char, bool&, char board[]);
+	int getPlayer1();
+	int setPlayer1(int);
+
+	bool restart();
+	bool move(int &, char);
 	void print();
-	void isWon();
+	int isWon();
 };
 
 #endif

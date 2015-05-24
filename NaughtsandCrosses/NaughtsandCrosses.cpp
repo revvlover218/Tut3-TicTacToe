@@ -9,46 +9,86 @@ NaughtsandCrosses::NaughtsandCrosses()
 	player1 = 'X';
 	player2 = 'O';
 	
-	for (int i = 0; i < 10; i++)
-	{
-		board[i] = ' ';
-	}
-
+	board[0] = 'o';
+	board[1] = '1';
+	board[2] = '2';
+	board[3] = '3';
+	board[4] = '4';
+	board[5] = '5';
+	board[6] = '6';
+	board[7] = '7';
+	board[8] = '8';
+	board[9] = '9';
 }
 
 NaughtsandCrosses::~NaughtsandCrosses()
 {
 }
 
-
-
-bool NaughtsandCrosses::restart(bool &done, char board[])
+int NaughtsandCrosses::getPlayer1()
 {
-
-	if (done)
-		for (char i = '1'; i < '10'; i++)
-		{
-			board[i] = i;
-		}
-
-		return done = false;
+	return player1;
 }
 
-bool NaughtsandCrosses::move(int currentPlayer, char playTurn, bool &legalMove, char board[])
+int NaughtsandCrosses::setPlayer1(int playerIn)
+{
+	player1 = playerIn;
+	return player1;
+}
+
+bool NaughtsandCrosses::restart()
+{
+
+	cout << "\n\nPlay again? Enter Y or N";
+	cin >> again;
+
+	if (again == 'Y')
+		NaughtsandCrosses();
+	return true;
+	if (again == 'N')
+	return false;
+}
+
+bool NaughtsandCrosses::move(int &currentPlayer, char mark)
 {
 
 	cout << "Player:" << currentPlayer << "Enter a number in the table";
-	cin >> playTurn;
+	cin >> input;
 
-	if (playTurn >= '1' && playTurn <= '9')
-	{
-		return true;
-	}
+	if (input == 1 && board[1] == ' ')
+		board[1] = mark;
 
+	else if (input == 2 && board[2] == ' ')
+		board[2] = mark;
+
+	else if (input == 3 && board[3] == ' ')
+		board[3] = mark;
+
+	else if (input == 4 && board[4] == ' ')
+		board[4] = mark;
+
+	else if (input == 5 && board[5] == ' ')
+		board[5] = mark;
+
+	else if (input == 6 && board[6] == ' ')
+		board[6] = mark;
+
+	else if (input == 7 && board[7] == ' ')
+		board[7] = mark;
+
+	else if (input == 8 && board[8] == ' ')
+		board[8] = mark;
+
+	else if (input == 9 && board[9] == ' ')
+		board[9] = mark;
 	else
 	{
+		cin.ignore();
+		cin.get();
 		return false;
 	}
+
+	return true;
 }
 
 void NaughtsandCrosses::print()
@@ -74,4 +114,38 @@ void NaughtsandCrosses::print()
 	cout << "  " << board[7] << "  |  " << board[8] << "  |  " << board[9] << endl;
 
 	cout << "     |     |     " << endl << endl;
+}
+
+int NaughtsandCrosses::isWon()
+{
+	if (board[1] == board[2] && board[2] == board[3])
+
+		return 1;
+	else if (board[4] == board[5] && board[5] == board[6])
+
+		return 1;
+	else if (board[7] == board[8] && board[8] == board[9])
+
+		return 1;
+	else if (board[1] == board[4] && board[4] == board[7])
+
+		return 1;
+	else if (board[2] == board[5] && board[5] == board[8])
+
+		return 1;
+	else if (board[3] == board[6] && board[6] == board[9])
+
+		return 1;
+	else if (board[1] == board[5] && board[5] == board[9])
+
+		return 1;
+	else if (board[3] == board[5] && board[5] == board[7])
+
+		return 1;
+	else if (board[1] != '1' && board[2] != '2' && board[3] != '3'
+			 && board[4] != '4' && board[5] != '5' && board[6] != '6'
+			 && board[7] != '7' && board[8] != '8' && board[9] != '9')
+				return 0;
+	else
+		return -1;
 }
